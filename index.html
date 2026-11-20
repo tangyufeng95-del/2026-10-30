@@ -78,7 +78,7 @@ const firebaseConfigured = Object.values(firebaseConfig).every(value => value &&
 const missingFirebaseConfigMessage = firebaseConfigured ? "" : "請先填入 Firebase 專案設定，才能啟用 Google 登入。";
 const firebaseApp = firebaseConfigured ? initializeApp(firebaseConfig) : null;
 const localDevelopment = location.hostname === "localhost" || location.hostname === "127.0.0.1";
-const recaptchaSiteKey = ""; // Add the production reCAPTCHA Enterprise site key from Firebase App Check.
+const recaptchaSiteKey = "6LevFCkuAAAAACEIblg7bKQhvRClA98ndUfDcOll"; // Production reCAPTCHA Enterprise site key from Firebase App Check.
 if (firebaseApp && localDevelopment) {
   try { await import("./local-appcheck-debug.js"); }
   catch { self.FIREBASE_APPCHECK_DEBUG_TOKEN = true; }
